@@ -6,7 +6,7 @@
 
 :root{
     --positive: 3px;
-    --negative: -3px;
+    --negative: calc(-1 * (var(--positive)));
 }
 
 body{
