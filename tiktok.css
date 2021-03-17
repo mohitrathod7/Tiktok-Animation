@@ -1,34 +1,48 @@
-body{
+*{
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
+}
+
+:root{
+    --positive: 3px;
+    --negative: -3px;
+}
+
+body{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     background: #000;
 }
 
 h1{
+    margin: auto;
     color: #fff;
-    font-family: sans-serif;
-    font-size: 250px;
+    font-size: 300px;
     animation: animate 0.5s linear infinite;
 }
 
 @keyframes animate{
     0%, 100%{
-        text-shadow: -3px -3px 0 #0ff, 3px 3px 0 #f00;
+        text-shadow: var(--negative) var(--negative) 0 #0ff, var(--positive) var(--positive) 0 #f00;
     }
 
     25%{
-        text-shadow: 3px 3px 0 #0ff, 3px -3px 0 #f00;
+        text-shadow: var(--positive) var(--positive) 0 #0ff, var(--positive) var(--negative) 0 #f00;
     }
 
     50%{
-        text-shadow: 3px -3px 0 #0ff, -3px 3px 0 #f00;
+        text-shadow: var(--positive) var(--negative) 0 #0ff, var(--negative) var(--positive) 0 #f00;
     }
 
     75%{
-        text-shadow: -3px 3px 0 #0ff, 3px -3px 0 #f00;
+        text-shadow: var(--negative) var(--positive) 0 #0ff, var(--positive) var(--negative) 0 #f00;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    h1{
+        font-size: 250px;
     }
 }
